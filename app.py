@@ -71,7 +71,6 @@ PROPOSAL_CONFIG = {
         "special_fields": [("VDate", "<<")],
         "proposal_type": "general"
     },
-    # New entry added here
     "Job portal website Tech Proposal": {
         "template": "Job portal website Tech Proposal.docx",
         "pricing_fields": [
@@ -226,6 +225,7 @@ def generate_document():
     config = PROPOSAL_CONFIG[selected_proposal]
     template_path = os.path.join(base_dir, config["template"])
 
+
     # Client Information
     col1, col2 = st.columns(2)
     with col1:
@@ -348,8 +348,7 @@ def generate_document():
         if client_number and country and not validate_phone_number(country, client_number):
             st.error("Invalid phone number format!")
         else:
-            unique_id = str(uuid.uuid4())[:8]
-            doc_filename = f"{selected_proposal.replace(' ', '_')}_{client_name}_{date_field.strftime('%Y%m%d')}_{unique_id}.docx"
+            doc_filename = f"Technical Consultation Proposal - {client_name} {date_field.strftime('%d-%m-%Y')}.docx"
 
             with tempfile.TemporaryDirectory() as temp_dir:
                 try:
@@ -373,7 +372,7 @@ def generate_document():
                         data=f,
                         file_name=doc_filename,
                         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                        )
+                    )
 
 
 if __name__ == "__main__":
