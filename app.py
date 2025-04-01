@@ -7,9 +7,7 @@ from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT
 import uuid
 import tempfile
 
-# Proposal configurations
 PROPOSAL_CONFIG = {
-    # Existing DM Proposal
     "Complete DM Services": {
         "template": "DM Proposal - All.docx",
         "pricing_fields": [
@@ -53,7 +51,7 @@ PROPOSAL_CONFIG = {
         "proposal_type": "digital_marketing"
     },
     "Only SEO": {
-        "template": "Only SEO.docx",
+        "template": "Only SEO.docx",  
         "pricing_fields": [
             ("Marketing Strategy", "MS"),
             ("SEO Optimization", "SEO"),
@@ -91,7 +89,7 @@ PROPOSAL_CONFIG = {
         "proposal_type": "digital_marketing"
     },
     "Only SMM": {
-        "template": "Only SSM.docx",
+        "template": "Only SMM.docx",  
         "pricing_fields": [
             ("Marketing Strategy", "MS"),
             ("Social Media Setup", "SM"),
@@ -103,48 +101,49 @@ PROPOSAL_CONFIG = {
         "proposal_type": "digital_marketing"
     },
     "SMM, Meta & Google Ads and SEO": {
-    "template": "SMM, Meta & Google Ads and SEO.docx",
-    "pricing_fields": [
-        ("Marketing Strategy", "MS"),
-        ("Social Media Setup", "SM"),
-        ("Meta & Google Ads Setup", "MG"),
-        ("Creative Posts", "CP"),
-        ("Meta Paid Ads", "MP"),
-        ("Google Paid Ads", "GP"),
-        ("SEO", "SEO"),
-        ("Monthly Reporting", "MR")
-    ],
-    "team_type": "dm",
-    "special_fields": [("VDate", "<<")],
-    "proposal_type": "digital_marketing"
-},
-"SMM, Google ads & Meta ads Campaigns": {
-    "template": "SMM, Google ads & Meta ads Campaigns.docx",
-    "pricing_fields": [
-        ("Marketing Strategy", "MS"),
-        ("Social Media Setup", "SM"),
-        ("Meta & Google Ads Setup", "MG"),
-        ("Creative Posts", "CP"),
-        ("Meta Paid Ads", "MP"),
-        ("Google Paid Ads", "GP"),
-        ("Monthly Reporting", "MR")
-    ],
-    "team_type": "dm",
-    "special_fields": [("VDate", "<<")],
-    "proposal_type": "digital_marketing"
-},
-"Only Email Marketing": {
-    "template": "Only Email Marketing.docx",
-    "pricing_fields": [
-        ("Marketing Strategy", "MS"),
-        ("Email Marketing", "EM"),
-        ("Monthly Reporting", "MR")
-    ],
-    "team_type": "dm",
-    "special_fields": [("VDate", "<<")],
-    "proposal_type": "digital_marketing"
+        "template": "SMM, Meta & Google Ads and SEO.docx",  
+        "pricing_fields": [
+            ("Marketing Strategy", "MS"),
+            ("Social Media Setup", "SM"),
+            ("Meta & Google Ads Setup", "MG"),
+            ("Creative Posts", "CP"),
+            ("Meta Paid Ads", "MP"),
+            ("Google Paid Ads", "GP"),
+            ("SEO", "SEO"),
+            ("Monthly Reporting", "MR")
+        ],
+        "team_type": "dm",
+        "special_fields": [("VDate", "<<")],
+        "proposal_type": "digital_marketing"
+    },
+    "SMM, Google ads & Meta ads Campaigns": {
+        "template": "SMM, Google ads & Meta ads Campaigns.docx",
+        "pricing_fields": [
+            ("Marketing Strategy", "MS"),
+            ("Social Media Setup", "SM"),
+            ("Meta & Google Ads Setup", "MG"),
+            ("Creative Posts", "CP"),
+            ("Meta Paid Ads", "MP"),
+            ("Google Paid Ads", "GP"),
+            ("Monthly Reporting", "MR")
+        ],
+        "team_type": "dm",
+        "special_fields": [("VDate", "<<")],
+        "proposal_type": "digital_marketing"
+    },
+    "Only Email Marketing": {
+        "template": "Only Email Marketing.docx",
+        "pricing_fields": [
+            ("Marketing Strategy", "MS"),
+            ("Email Marketing", "EM"),
+            ("Monthly Reporting", "MR")
+        ],
+        "team_type": "dm",
+        "special_fields": [("VDate", "<<")],
+        "proposal_type": "digital_marketing"
+    }
 }
-}
+
 
 def apply_formatting(new_run, original_run):
     """Copy formatting from original run to new run"""
