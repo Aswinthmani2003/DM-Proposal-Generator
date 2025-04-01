@@ -217,17 +217,24 @@ def get_dm_team_details():
     return team_details
 
 def remove_empty_rows(table):
-    """Remove rows from the table where the pricing cell is empty or zero"""
+    """Remove entire rows where the last cell is empty after replacements"""
     rows_to_remove = []
+    # Keep header row (assuming first row is header)
+    header_row = table.rows[0] if table.rows else None
+    
     for row in table.rows:
-        if row.cells[0].text.strip().lower() == 'description':
+        # Skip header row
+        if row == header_row:
             continue
             
-        if len(row.cells) > 2:
-            price_cell = row.cells[2].text.strip()
-            if price_cell in {"", "$0", "₹0", "0", "<<>>"}:
+        # Check last cell for emptiness
+        if row.cells:
+            last_cell = row.cells[-1]
+            last_cell_text = last_cell.text.strip()
+            if not last_cell_text:  # Cell is empty
                 rows_to_remove.append(row)
     
+    # Remove identified rows
     for row in reversed(rows_to_remove):
         table._tbl.remove(row._element)
 
@@ -248,7 +255,7 @@ def generate_document():
     config = PROPOSAL_CONFIG[selected_proposal]
     template_path = os.path.join(base_dir, config["template"])
 
-    # Client Information
+    # Client Information (unchanged)
     col1, col2 = st.columns(2)
     with col1:
         client_name = st.text_input("Client Name:")
@@ -262,7 +269,7 @@ def generate_document():
     currency = st.selectbox("Select Currency", ["USD", "INR"])
     currency_symbol = "$" if currency == "USD" else "₹"
 
-    # Special Fields
+    # Special Fields (unchanged)
     special_data = {}
     st.subheader("Additional Details")
     vdate = st.date_input("Proposal Validity Until:")
@@ -295,7 +302,16 @@ def generate_document():
                     numerical_values[key] = value
                     pricing_data[f"<<{key}>>"] = f"{currency_symbol}{format_number_with_commas(value)}" if value > 0 else ""
 
-    # Payment Schedule Section
+    # Total Calculation (updated)
+    services_sum = sum(numerical_values.values())
+    gst = int(services_sum * 0.18) if currency == "INR" else 0  # Convert to integer
+    tp = int(services_sum + gst) if currency == "INR" else services_sum  # Convert to integer
+
+    pricing_data["<<Total>>"] = f"{currency_symbol}{format_number_with_commas(services_sum)}" if currency == "INR" else ""
+    pricing_data["<<GST>>"] = f"{currency_symbol}{format_number_with_commas(gst)}" if currency == "INR" else ""
+    pricing_data["<<TP>>"] = f"{currency_symbol}{format_number_with_commas(tp)}"
+
+    # Payment Schedule Section (unchanged)
     instalment_data = {}
     st.subheader("Payment Schedule")
     cols = st.columns(2)
@@ -322,15 +338,10 @@ def generate_document():
         "<<Instalment 2>>": f"{currency_symbol}{format_number_with_commas(instalment2)}"
     }
 
-    # Total Calculation
-    services_sum = sum(numerical_values.values())
-    total = services_sum
-    pricing_data["<<Total>>"] = f"{currency_symbol}{format_number_with_commas(total)}"
-
-    # Team Composition
+    # Team Composition (unchanged)
     team_data = get_dm_team_details()
 
-    # Combine all placeholders
+    # Combine all placeholders (updated with GST and TP)
     placeholders = {
         "<<Client Name>>": client_name,
         "<<Client Email>>": client_email,
@@ -343,7 +354,7 @@ def generate_document():
     placeholders.update(instalment_data)
 
     if st.button("Generate Proposal"):
-        doc_filename = f"Technical Consultation Proposal - {client_name} {date_field.strftime('%d-%m-%Y')}.docx"
+        doc_filename = f"DM Proposal - {client_name} {date_field.strftime('%d-%m-%Y')}.docx"
 
         with tempfile.TemporaryDirectory() as temp_dir:
             try:
@@ -353,6 +364,14 @@ def generate_document():
                 return
 
             doc = replace_and_format(doc, placeholders)
+
+            # Remove GST and Total lines for USD (new)
+            if currency == "USD":
+                paragraphs = list(doc.paragraphs)
+                for para in reversed(paragraphs):
+                    if "Total Marketing Cost" in para.text or "GST" in para.text:
+                        p = para._element
+                        p.getparent().remove(p)
 
             for table in doc.tables:
                 remove_empty_rows(table)
