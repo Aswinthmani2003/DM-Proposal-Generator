@@ -11,14 +11,14 @@ PROPOSAL_CONFIG = {
     "SMM, Meta & Google Ads and SEO": {
         "template": "SMM, Meta & Google Ads and SEO.docx",
         "pricing_fields": [
-            ("Marketing Strategy", "MS"),
-            ("Social Media Setup", "SM"),
-            ("Meta & Google Ads Setup", "MG"),
-            ("Creative Posts", "CP"),
-            ("Meta Paid Ads", "MP"),
-            ("Google Paid Ads", "GP"),
-            ("SEO", "SEO"),
-            ("Monthly Reporting", "MR")
+            ("Marketing Strategy", "MS", "One Time Fee"),
+            ("Social Media Setup", "SM", "One Time Fee"),
+            ("Meta & Google Ads Setup", "MG", "One Time Fee"),
+            ("Creative Posts", "CP", "Monthly Recurring Fee"),
+            ("Meta Paid Ads", "MP", "Monthly Recurring Fee"),
+            ("Google Paid Ads", "GP", "Monthly Recurring Fee"),
+            ("SEO", "SEO", "Monthly Recurring Fee"),
+            ("Monthly Reporting", "MR", "Monthly Recurring Fee")
         ],
         "team_type": "dm",
         "special_fields": [("VDate", "<<")],
@@ -27,11 +27,11 @@ PROPOSAL_CONFIG = {
     "SEO & Google Ads Campaign": {
         "template": "SEO & Google ads campaign.docx",
         "pricing_fields": [
-            ("Marketing Strategy", "MS"),
-            ("Google Ads Setup", "MG"),
-            ("Google Paid Ads", "GP"),
-            ("SEO Optimization", "SEO"),
-            ("Monthly Reporting", "MR")
+            ("Marketing Strategy", "MS", "One Time Fee"),
+            ("Google Ads Setup", "MG", "One Time Fee"),
+            ("Google Paid Ads", "GP", "Monthly Recurring Fee"),
+            ("SEO Optimization", "SEO", "Monthly Recurring Fee"),
+            ("Monthly Reporting", "MR", "Monthly Recurring Fee")
         ],
         "team_type": "dm",
         "special_fields": [("VDate", "<<")],
@@ -40,10 +40,10 @@ PROPOSAL_CONFIG = {
     "Only Google Ads Campaign": {
         "template": "Only Google Ads Campaign.docx",
         "pricing_fields": [
-            ("Marketing Strategy", "MS"),
-            ("Google Ads Setup", "MG"),
-            ("Google Paid Ads", "GP"),
-            ("Monthly Reporting", "MR")
+            ("Marketing Strategy", "MS", "One Time Fee"),
+            ("Google Ads Setup", "MG", "One Time Fee"),
+            ("Google Paid Ads", "GP", "Monthly Recurring Fee"),
+            ("Monthly Reporting", "MR", "Monthly Recurring Fee")
         ],
         "team_type": "dm",
         "special_fields": [("VDate", "<<")],
@@ -52,13 +52,13 @@ PROPOSAL_CONFIG = {
     "SMM, Google ads & Meta ads Campaigns": {
         "template": "SMM, Google ads & Meta ads Campaigns.docx",
         "pricing_fields": [
-            ("Marketing Strategy", "MS"),
-            ("Social Media Setup", "SM"),
-            ("Meta & Google Ads Setup", "MG"),
-            ("Creative Posts", "CP"),
-            ("Meta Paid Ads", "MP"),
-            ("Google Paid Ads", "GP"),
-            ("Monthly Reporting", "MR")
+            ("Marketing Strategy", "MS", "One Time Fee"),
+            ("Social Media Setup", "SM", "One Time Fee"),
+            ("Meta & Google Ads Setup", "MG", "One Time Fee"),
+            ("Creative Posts", "CP", "Monthly Recurring Fee"),
+            ("Meta Paid Ads", "MP", "Monthly Recurring Fee"),
+            ("Google Paid Ads", "GP", "Monthly Recurring Fee"),
+            ("Monthly Reporting", "MR", "Monthly Recurring Fee")
         ],
         "team_type": "dm",
         "special_fields": [("VDate", "<<")],
@@ -67,20 +67,20 @@ PROPOSAL_CONFIG = {
     "Only Email Marketing": {
         "template": "Only Email Marketing.docx",
         "pricing_fields": [
-            ("Marketing Strategy", "MS"),
-            ("Email Marketing", "EM"),
-            ("Monthly Reporting", "MR")
+            ("Marketing Strategy", "MS", "One Time Fee"),
+            ("Email Marketing", "EM", "Monthly Recurring Fee"),
+            ("Monthly Reporting", "MR", "Monthly Recurring Fee")
         ],
         "team_type": "dm",
         "special_fields": [("VDate", "<<")],
         "proposal_type": "digital_marketing"
     },
     "Only SEO": {
-        "template": "Only SEO .docx",
+        "template": "Only SEO.docx",
         "pricing_fields": [
-            ("Marketing Strategy", "MS"),
-            ("SEO", "SEO"),
-            ("Monthly Reporting", "MR")
+            ("Marketing Strategy", "MS", "One Time Fee"),
+            ("SEO", "SEO", "Monthly Recurring Fee"),
+            ("Monthly Reporting", "MR", "Monthly Recurring Fee")
         ],
         "team_type": "dm",
         "special_fields": [("VDate", "<<")],
@@ -89,12 +89,12 @@ PROPOSAL_CONFIG = {
     "SMM & Meta Ads Campaigns": {
         "template": "SMM & Meta Ads Campaigns.docx",
         "pricing_fields": [
-            ("Marketing Strategy", "MS"),
-            ("Social Media Setup", "SM"),
-            ("Meta & Google Ads Setup", "MG"),
-            ("Creative Posts", "CP"),
-            ("Meta Paid Ads", "MP"),
-            ("Monthly Reporting", "MR")
+            ("Marketing Strategy", "MS", "One Time Fee"),
+            ("Social Media Setup", "SM", "One Time Fee"),
+            ("Meta & Google Ads Setup", "MG", "One Time Fee"),
+            ("Creative Posts", "CP", "Monthly Recurring Fee"),
+            ("Meta Paid Ads", "MP", "Monthly Recurring Fee"),
+            ("Monthly Reporting", "MR", "Monthly Recurring Fee")
         ],
         "team_type": "dm",
         "special_fields": [("VDate", "<<")],
@@ -103,23 +103,23 @@ PROPOSAL_CONFIG = {
     "Only Meta Ads Campaigns": {
         "template": "Only Meta Ads Campaigns.docx",
         "pricing_fields": [
-            ("Marketing Strategy", "MS"),
-            ("Social Media Setup", "SM"),
-            ("Meta Ads Setup", "MG"),
-            ("Meta Paid Ads", "MP"),
-            ("Monthly Reporting", "MR")
+            ("Marketing Strategy", "MS", "One Time Fee"),
+            ("Social Media Setup", "SM", "One Time Fee"),
+            ("Meta Ads Setup", "MG", "One Time Fee"),
+            ("Meta Paid Ads", "MP", "Monthly Recurring Fee"),
+            ("Monthly Reporting", "MR", "Monthly Recurring Fee")
         ],
         "team_type": "dm",
         "special_fields": [("VDate", "<<")],
         "proposal_type": "digital_marketing"
     },
-    "Only SSM": {
-        "template": "Only SSM.docx",
+    "Only SMM": {
+        "template": "Only SMM.docx",
         "pricing_fields": [
-            ("Marketing Strategy", "MS"),
-            ("Social Media Setup", "SM"),
-            ("Creative Posts", "CP"),
-            ("Monthly Reporting", "MR")
+            ("Marketing Strategy", "MS", "One Time Fee"),
+            ("Social Media Setup", "SM", "One Time Fee"),
+            ("Creative Posts", "CP", "Monthly Recurring Fee"),
+            ("Monthly Reporting", "MR", "Monthly Recurring Fee")
         ],
         "team_type": "dm",
         "special_fields": [("VDate", "<<")],
@@ -128,23 +128,21 @@ PROPOSAL_CONFIG = {
     "All Services (DM Proposal - All)": {
         "template": "DM Proposal - All.docx",
         "pricing_fields": [
-            ("Marketing Strategy", "MS"),
-            ("Social Media Setup", "SM"),
-            ("Meta & Google Ads Setup", "MG"),
-            ("Creative Posts", "CP"),
-            ("Meta Paid Ads", "MP"),
-            ("Google Paid Ads", "GP"),
-            ("SEO", "SEO"),
-            ("Email Marketing", "EM"),
-            ("Monthly Reporting", "MR")
+            ("Marketing Strategy", "MS", "One Time Fee"),
+            ("Social Media Setup", "SM", "One Time Fee"),
+            ("Meta & Google Ads Setup", "MG", "One Time Fee"),
+            ("Creative Posts", "CP", "Monthly Recurring Fee"),
+            ("Meta Paid Ads", "MP", "Monthly Recurring Fee"),
+            ("Google Paid Ads", "GP", "Monthly Recurring Fee"),
+            ("SEO", "SEO", "Monthly Recurring Fee"),
+            ("Email Marketing", "EM", "Monthly Recurring Fee"),
+            ("Monthly Reporting", "MR", "Monthly Recurring Fee")
         ],
         "team_type": "dm",
         "special_fields": [("VDate", "<<")],
         "proposal_type": "digital_marketing"
     }
 }
-
-
 
 def apply_formatting(new_run, original_run):
     """Copy formatting from original run to new run"""
@@ -247,6 +245,29 @@ def validate_phone_number(country, phone_number):
 def format_number_with_commas(number):
     return f"{number:,}"
 
+def calculate_installments(pricing_fields, numerical_values, currency):
+    """Calculate installment amounts based on fee types"""
+    one_time_fee_total = 0
+    monthly_fee_total = 0
+    
+    # Calculate totals for each fee type
+    for label, key, fee_type in pricing_fields:
+        value = numerical_values.get(key, 0)
+        if "One Time" in fee_type:
+            one_time_fee_total += value
+        elif "Monthly" in fee_type:
+            monthly_fee_total += value
+    
+    # Calculate installments with GST for INR
+    if currency == "INR":
+        instalment1 = one_time_fee_total + (one_time_fee_total * 0.18)
+        instalment2 = monthly_fee_total + (monthly_fee_total * 0.18)
+    else:
+        instalment1 = one_time_fee_total
+        instalment2 = monthly_fee_total
+    
+    return int(instalment1), int(instalment2)
+
 def generate_document():
     st.title("DM Proposal Generator")
     base_dir = os.getcwd()
@@ -255,7 +276,7 @@ def generate_document():
     config = PROPOSAL_CONFIG[selected_proposal]
     template_path = os.path.join(base_dir, config["template"])
 
-    # Client Information (unchanged)
+    # Client Information
     col1, col2 = st.columns(2)
     with col1:
         client_name = st.text_input("Client Name:")
@@ -269,7 +290,7 @@ def generate_document():
     currency = st.selectbox("Select Currency", ["USD", "INR"])
     currency_symbol = "$" if currency == "USD" else "₹"
 
-    # Special Fields (unchanged)
+    # Special Fields
     special_data = {}
     st.subheader("Additional Details")
     vdate = st.date_input("Proposal Validity Until:")
@@ -289,10 +310,10 @@ def generate_document():
         for col in range(2):
             idx = row * 2 + col
             if idx < num_fields:
-                label, key = pricing_fields[idx]
+                label, key, fee_type = pricing_fields[idx]
                 with cols[col]:
                     value = st.number_input(
-                        f"{label} ({currency})",
+                        f"{label} ({fee_type})",
                         min_value=0,
                         value=0,
                         step=100,
@@ -302,46 +323,33 @@ def generate_document():
                     numerical_values[key] = value
                     pricing_data[f"<<{key}>>"] = f"{currency_symbol}{format_number_with_commas(value)}" if value > 0 else ""
 
-    # Total Calculation (updated)
+    # Calculate totals
     services_sum = sum(numerical_values.values())
-    gst = int(services_sum * 0.18) if currency == "INR" else 0  # Convert to integer
-    tp = int(services_sum + gst) if currency == "INR" else services_sum  # Convert to integer
+    gst = int(services_sum * 0.18) if currency == "INR" else 0
+    tp = int(services_sum + gst) if currency == "INR" else services_sum
 
     pricing_data["<<Total>>"] = f"{currency_symbol}{format_number_with_commas(services_sum)}" if currency == "INR" else ""
     pricing_data["<<GST>>"] = f"{currency_symbol}{format_number_with_commas(gst)}" if currency == "INR" else ""
     pricing_data["<<TP>>"] = f"{currency_symbol}{format_number_with_commas(tp)}"
 
-    # Payment Schedule Section (unchanged)
-    instalment_data = {}
+    # Payment Schedule Section - Now automated
     st.subheader("Payment Schedule")
-    cols = st.columns(2)
-    with cols[0]:
-        instalment1 = st.number_input(
-            f"Instalment 1 ({currency})",
-            min_value=0,
-            value=0,
-            step=100,
-            format="%d",
-            key="instalment_1"
-        )
-    with cols[1]:
-        instalment2 = st.number_input(
-            f"Instalment 2 ({currency})",
-            min_value=0,
-            value=0,
-            step=100,
-            format="%d",
-            key="instalment_2"
-        )
+    instalment1, instalment2 = calculate_installments(pricing_fields, numerical_values, currency)
+    
+    # Display calculated installments (read-only) with conditional GST text
+    gst_text = " + GST" if currency == "INR" else ""
+    st.write(f"Instalment 1 (One-time fee total{gst_text}): {currency_symbol}{format_number_with_commas(instalment1)}")
+    st.write(f"Instalment 2 (Monthly recurring fee total{gst_text}): {currency_symbol}{format_number_with_commas(instalment2)}")
+    
     instalment_data = {
         "<<Instalment 1>>": f"{currency_symbol}{format_number_with_commas(instalment1)}",
         "<<Instalment 2>>": f"{currency_symbol}{format_number_with_commas(instalment2)}"
     }
 
-    # Team Composition (unchanged)
+    # Team Composition
     team_data = get_dm_team_details()
 
-    # Combine all placeholders (updated with GST and TP)
+    # Combine all placeholders
     placeholders = {
         "<<Client Name>>": client_name,
         "<<Client Email>>": client_email,
@@ -365,7 +373,7 @@ def generate_document():
 
             doc = replace_and_format(doc, placeholders)
 
-            # Remove GST and Total lines for USD (new)
+            # Remove GST and Total lines for USD
             if currency == "USD":
                 paragraphs = list(doc.paragraphs)
                 for para in reversed(paragraphs):
