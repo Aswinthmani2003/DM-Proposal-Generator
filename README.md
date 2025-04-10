@@ -1,14 +1,25 @@
 DM Proposal Generator
+
 📌 Overview
+
 DM Proposal Generator is an AI-powered tool designed to automate the creation of digital marketing proposals. By leveraging customizable templates and user inputs, it streamlines the proposal drafting process, ensuring efficiency and professionalism.
+
 🚀 Features
-•	Automated Proposal Creation: Generates structured digital marketing proposals based on user-provided details.
+
+•	Automated Proposal Creation: Generates structured digital marketing proposals based on user-provided details
+
 •	Customizable Templates: Offers predefined templates for various marketing strategies, including SEO, SMM, Google Ads, Meta Ads, and Email Marketing.
+
 •	Efficient Formatting: Ensures consistent structuring and readability across all proposals.
+
 •	Content Optimization: Provides suggestions to enhance clarity, conciseness, and professionalism.
+
 🛠️ Installation
+
 To set up the DM Proposal Generator locally, follow these steps:
+
 1.	Clone the Repository:
+
 bash
 CopyEdit
 git clone https://github.com/Aswinthmani2003/DM-Proposal-Generator.git
