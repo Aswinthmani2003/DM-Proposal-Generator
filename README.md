@@ -21,44 +21,80 @@ To set up the DM Proposal Generator locally, follow these steps:
 1.	Clone the Repository:
 
 bash
+
 CopyEdit
+
 git clone https://github.com/Aswinthmani2003/DM-Proposal-Generator.git
+
 2.	Navigate to the Project Directory:
+
 bash
+
 CopyEdit
+
 cd DM-Proposal-Generator
-3.	Set Up a Virtual Environment:
+
+4.	Set Up a Virtual Environment:
+
 o	On macOS/Linux:
+
 bash
+
 CopyEdit
+
 python3 -m venv venv
+
 source venv/bin/activate
+
 o	On Windows:
+
 bash
+
 CopyEdit
+
 python -m venv venv
+
 venv\Scripts\activate
-4.	Install Required Dependencies:
+
+6.	Install Required Dependencies:
+   
 bash
+
 CopyEdit
+
 pip install -r requirements.txt
+
 🏗️ Usage
+
 1.	Run the Application:
+   
 bash
+
 CopyEdit
+
 python app.py
-2.	Provide Input Details:
+
+3.	Provide Input Details:
+   
 Enter the necessary information for the proposal, such as project objectives, target audience, and specific requirements.
-3.	Select a Template:
+
+5.	Select a Template:
+   
 Choose from a range of predefined templates tailored for different digital marketing strategies:
+
 o	SEO
+
 o	Social Media Marketing (SMM)
+
 o	Google Ads Campaigns
+
 o	Meta Ads Campaigns
+
 o	Email Marketing
-4.	Generate and Review the Proposal:
+
+7.	Generate and Review the Proposal:
 The system will draft a proposal based on your inputs and the selected template. Review the content and make any necessary adjustments.
-5.	Export the Proposal:
+8.	Export the Proposal:
 Save the finalized proposal in your preferred format, such as PDF or Word document.
 🐳 Docker Deployment
 To deploy the DM Proposal Generator using Docker:
